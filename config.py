@@ -4,20 +4,17 @@
 #
 # ==================================================================================================== #
 
-# Define left and right min and max values of the coordinate system
-
-'''
-Default values
+# Define left and right min and max values of the coordinate system -- these are the default values
 x_max = 0.5
 x_min = -2
 y_max = 1
 y_min = -1
-'''
 
-x_max = 0.08
-x_min = -0.75
-y_max = 0.16 + 0.42
-y_min = 0.16 - 0.42
+# For centering on specific coordinates -- this will work only if custom_area is set to true
+custom_area = True
+center_x = -0.75
+center_y = 0.16
+spread = 0.005
 
 # Define the image width (height will be calculated accordingly)
 img_width = 1366

@@ -8,6 +8,7 @@ import time
 from PIL import Image, ImageDraw
 from config import *
 from calculate_pixel_value import calculate_pixel_value
+from determine_pixel_color import determine_color
 
 def generate_fractal():
 	# Calculate the extrapolated values
@@ -34,14 +35,14 @@ def generate_fractal():
 		for x in range(img_width):
 			in_set, escape_count = calculate_pixel_value(x, y, x_min, y_max, pixel_step, max_iterations, escape_threshold)
 			if not in_set:
-				escape_ratio = escape_count/max_iterations
-				color_value = round(255 * escape_ratio)
-				pixel_color = (color_value, color_value, color_value)
+				color_value = determine_color(escape_count, max_iterations, selected_pallete)
 				drawer.point([x, y], color_value)
 
 	# Determine the image name
 	img_name = str(round(time.time()))
 	output.save(f"outputs/{img_name}.png")
+
+	print(f"Generated render with file name of {img_name}.png in the outputs/ directiory")
 
 
 if __name__ == '__main__':

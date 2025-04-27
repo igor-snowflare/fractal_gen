@@ -4,9 +4,9 @@
 
 A small Python tool that produces renders of the Mandelbrot Set based on just several input criteria.
 
-## Using the tool
+## Using the Tool
 
-Different results can be achieved by changing the values in the `config` file. Their purpose is as follows:
+Different results can be achieved by changing the values in the `lib/config` file. Their purpose is as follows:
 
 * `x_max` — Farthest positive value that will be rendered on the horizontal axis
 * `x_min` — Farthest negative value that will be rendered on the horizontal axis
@@ -38,3 +38,15 @@ Variables that control this behaviour are as follows:
 The style of the output for the time being is very rudimentary — it is controled by `selected_pallete` variable in the `config` file. For now it supports values of `None` for render in red channel only, or the value of `"catpuccin"` that will use the catpuccin colors.
 
 The latter option is recommended for renders of zoomed in sections.
+
+## The Logic Behind the Code
+
+Mandelbrot set is a set of complex numbers that can be plotted on x, y coordinates with x corresponding to their real and y to their imaginary component — what makes them a set is the fact that they do not diverge to infinity when passed through a recursive function $f(z)=z^2 + c$.
+
+In practice this means that as we recurse, we take note whether the result is pass some arbitrary threshold (usually 2) and if so, we determine that c is *not* in the Mandelbrot set.
+
+For all these numbers, we also take note on how many recursions took place before they passed the threshold — this is what determines the color variations on the render.
+
+The numbers that don't cross the threshold within the arbitrary number of steps are considered to be within the Mandelbrot set and are shown in black on the renders.
+
+More information on the Mandelbrot set based on which the code was written can be found [here](https://en.wikipedia.org/wiki/Mandelbrot_set).

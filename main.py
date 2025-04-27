@@ -6,10 +6,10 @@
 
 import time
 from PIL import Image, ImageDraw
-import config
-from calculate_pixel_value import calculate_pixel_value
-from determine_pixel_color import determine_color
-from calculate_from_center import calculate_from_center
+import lib.config as config
+from src.calculate_pixel_value import calculate_pixel_value
+from src.determine_pixel_color import determine_color
+from src.calculate_from_center import calculate_from_center
 
 def generate_fractal():
 	# Recalculate starting variables if custom_area is set to true

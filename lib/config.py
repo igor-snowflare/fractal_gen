@@ -11,7 +11,7 @@ y_max = 1
 y_min = -1
 
 # For centering on specific coordinates -- this will work only if custom_area is set to true
-custom_area = False
+custom_area = True
 center_x = -0.75
 center_y = 0.16
 spread = 0.005
@@ -26,4 +26,4 @@ max_iterations = 70
 escape_threshold = 2
 
 # Pallete to be used - can be None for render in red channel only or catpuccin
-selected_pallete = None
+selected_pallete = "catpuccin"

@@ -4,7 +4,7 @@
 #
 # ==================================================================================================== #
 
-from palletes import palletes_out
+from lib.palletes import palletes_out
 
 def determine_color(escape_count, max_iterations, pallete=None):
 	escape_ratio = escape_count/max_iterations
